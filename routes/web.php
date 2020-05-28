@@ -26,7 +26,7 @@ Route::get('/contactus', 'Contact@index');
 Route::post('/contactus', 'Contact@mail');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
 
@@ -43,6 +43,10 @@ Route::get('admin-password/reset/{token}', 'Admin\ResetPasswordController@showRe
 //route for movie for users
 Route::get('/allmovies','UserController@movie');
 Route::get('/selectedmovie/{id?}','UserController@selected');
+
+//user booking
+
+Route::get('booking/{id}','BookingController@booking');
 
 
 //MOVIE

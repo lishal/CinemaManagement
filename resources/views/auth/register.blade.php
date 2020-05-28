@@ -35,6 +35,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <a href="{{url('/login')}}" class="btn btn-primary">Back To Login</a>
                             </div>
                         </div>
                     </form>

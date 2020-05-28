@@ -152,3 +152,10 @@ input[type=submit]:hover {
   color: grey;
   font-size: 22px;
 }
+.display_details{
+  font-size: 3vh;
+}
+.display_desc{
+  font-size: 3vh;
+  text-align:justify;
+}

@@ -61,6 +61,7 @@
                                 @endif
                             </div>
                         </div>
+                        <a href="{{url('/register')}}">Not registered yet?</a>
                     </form>
                 </div>
 @endsection

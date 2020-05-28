@@ -18,7 +18,6 @@
                     <th>Movie Duration</th>
                     <th>Movie Director</th>
                     <th>Cast Members</th>
-                    <th>Description</th>
                     <th>Active Movie</th>
                     {{-- <th>Title Image</th> --}}
                     <th>Action</th>
@@ -35,7 +34,6 @@
                         <td>{{ $movie->duration_min }}</td>
                         <td>{{ $movie->director }}</td>
                         <td>{{ $movie->cast }}</td>
-                        <td>{{ $movie->description }}</td>
                         @if($movie->isActive==1)
                             <td>Yes</td>
                         

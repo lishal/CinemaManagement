@@ -17,4 +17,5 @@ class UserController extends Controller
         //return($movie);
         return view('users.Movies.selected',['movie'=>$movie]);
     }
+    
 }
