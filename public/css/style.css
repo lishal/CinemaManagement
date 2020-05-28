@@ -154,6 +154,7 @@ input[type=submit]:hover {
 }
 .display_details{
   font-size: 3vh;
+  text-align:justify;
 }
 .display_desc{
   font-size: 3vh;

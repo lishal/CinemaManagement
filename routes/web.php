@@ -57,3 +57,6 @@ Route::post('/admin/addmovie','MovieController@save');
 Route::get('admin/delete/{id}','MovieController@delete');
 Route::get('admin/status/{id}','MovieController@status');
 
+Route::get('/showtime','ShowController@index');
+Route::get('/addshow','ShowController@add');
+

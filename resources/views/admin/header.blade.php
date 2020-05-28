@@ -21,7 +21,7 @@
           <!-- Menu Toggle Button -->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="{{ url('images/admin.png') }}" class="user-image" alt="User Image">
-          <span class="hidden-xs">{{ \Auth::user()->name}}</span>
+          <span class="hidden-xs">Hello, Admin</span>
           </a>
           
           
@@ -31,7 +31,7 @@
               <img src="{{ url('images/admin.png') }}" class="img-circle"  alt="User Image">
               <p>
                 
-                <h4 style="color:white">{{ \Auth::user()->name}}</h4>
+                <h4 style="color:white">Hello, Admin</h4>
               </p>
             </li>
             <!-- Menu Footer-->

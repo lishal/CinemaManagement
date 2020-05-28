@@ -38,7 +38,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
   <!-- Date picker -->
-  <link rel="stylesheet" href="{{ url('css/jDatepicker.css') }}">
+
+  <link rel="stylesheet" href="{{ url('css/jquery.timepicker.css') }}">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 
   <!-- jQuery 3 -->
@@ -49,6 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="{{ url('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
   <script src="{{ url('bower_components/admin-lte/dist/js/adminlte.min.js') }}"></script>
   <script src="{{ url('js/admin.js') }}"></script>
+  <script src="{{ url('js/jquery.timepicker.js') }}"></script>
 
 </head>
 
@@ -76,6 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
+ 
   <footer class="main-footer" style="text-align: center;">
   @include('layout.footer')
   </footer>

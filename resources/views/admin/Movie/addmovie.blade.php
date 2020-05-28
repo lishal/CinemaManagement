@@ -96,7 +96,7 @@
                         <label class="col-md-2 control-label">Release Date*</label>
 
                         <div class="col-md-7">
-                            <input type="text" class="form-control" placeholder="Release Date" name="releasedate" id="releasedate" value="{{ old('releasedate')? old('releasedate'): ($movies->release_date? $movies->release_date: '') }}">
+                            <input type="text" class="form-control" placeholder="Release Date" name="releasedate" id="releasedate" value="{{ old('releasedate')? old('releasedate'): ($movies->release_date? $movies->release_date: '') }}" autocomplete="off">
                             @error('releasedate')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -109,7 +109,7 @@
                         <label class="col-md-2 control-label"> Description*</label>
 
                         <div class="col-md-7">
-                            <textarea class="form-control" placeholder="Description" id="description" name="description">{{ old('description')? old('description'): ($movies->cast? $movies->cast: '') }}</textarea>
+                            <textarea class="form-control" placeholder="Description" id="description" name="description">{{ old('description')? old('description'): ($movies->description? $movies->description: '') }}</textarea>
                             @error('description')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -122,7 +122,7 @@
                             <label class="col-md-2 control-label">Title Image*</label>
 
                             <div class="col-md-7">
-                                <input type="file" class="form-control" placeholder="Title Image" name="titleimg">
+                            <input type="file" class="form-control" placeholder="Title Image" name="titleimg" value="{{ old('titleimg')? old('titleimg'): ($movies->title_image? $movies->title_image: '') }}">
                                 @error('titleimg')
                                 <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

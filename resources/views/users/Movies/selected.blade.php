@@ -12,7 +12,11 @@
               <div class="col-sm-6" style="margin-top: 25px;">
                 <img class="card-img-top" src="{{ asset('uploads/titleimg/'.$movie->title_image)}}" alt={{$movie->movie_name}} height="550" width="400" >
                 <button type="button"  class="btn btn-primary" style="margin-top: 10px; height:50px; width:200px; margin-left:-1vh;" data-toggle="modal" data-target="#modalYT">Trailer <i class="fa fa-film" style="margin-left:5px;" aria-hidden="true"></i></button>
+                @if($movie->checkage==0)
                 <a href="{{url('booking')}}/{{ $movie->id }}"><button type="button"  class="btn btn-success" style="margin-top: 10px; height:50px; width:200px; margin-left:2vh;">Book Now <i class="fa fa-ticket" style="margin-left:5px;" aria-hidden="true"></i></button></a>
+                @else
+                <a href="{{url('booking')}}/{{ $movie->id }}"><button type="button" onclick="myFunction()"  class="btn btn-success" style="margin-top: 10px; height:50px; width:200px; margin-left:2vh;">Book Now <i class="fa fa-ticket" style="margin-left:5px;" aria-hidden="true"></i></button></a>
+                @endif
               </div>
               <div class="col-sm-6" style="margin-top: 25px;">
                 <p class="display_details">
@@ -62,6 +66,11 @@
           </div> 
          
     </div>
+    <script>
+      function myFunction() {
+        alert("Note* This move has 18+ content. Suspected person are required to show their ID card. I request everyone to carry their own ID card.");
+      }
+      </script>
 @endsection
 @section('footer')
 @include('layout.footer')
