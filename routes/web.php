@@ -39,6 +39,13 @@ Route::get('admin-password/reset', 'Admin\ForgotPasswordController@showLinkReque
 Route::post('admin-password/reset', 'Admin\ResetPasswordController@reset')->name('admin.password.update');;
 Route::get('admin-password/reset/{token}', 'Admin\ResetPasswordController@showResetForm')->name('admin.password.reset');
 
+Route::get('/userlist','UserlistController@index');
+Route::get('/deleteuser/{id}','UserlistController@delete');
+
+Route::get('/paymentlist','PaymentlistController@paid');
+Route::get('/bookinglist','PaymentlistController@notpaid');
+
+
 //user
 //route for movie for users
 Route::get('/allmovies','UserController@movie');
@@ -47,6 +54,14 @@ Route::get('/selectedmovie/{id?}','UserController@selected');
 //user booking
 
 Route::get('booking/{id}','BookingController@booking');
+
+// Book seat
+Route::get('/seatselection/{id}/{movie_id}','BookingController@seat');
+Route::post('/seatconfirm/{id}','BookingController@save');
+Route::get('/myticket','BookingController@myticket');
+Route::get('/payment/{id}','BookingController@payment');
+Route::post('/details/{id}','BookingController@detail');
+Route::get('/cancel/{id}','BookingController@cancel');
 
 
 //MOVIE
@@ -59,4 +74,10 @@ Route::get('admin/status/{id}','MovieController@status');
 
 Route::get('/showtime','ShowController@index');
 Route::get('/addshow','ShowController@add');
+Route::post('/addshow/store','ShowController@store');
+Route::get('/showtime/{id}','ShowController@delete');
 
+
+Route::get('/userprofile','ProfileController@profile');
+Route::POST('/profile', 'ProfileController@update_profile');
+Route::POST('/update_password', 'ProfileController@update_password');

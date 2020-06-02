@@ -1,10 +1,10 @@
 @extends('layout.main')
 @section('container')
-<div class="cms-main-container">
+<div class="cms-main-container"style="height: 710px;">
 
   <h1 style="text-align: center;">Login with your registered email</h1><hr>
 
-  <div class="f-container">
+  <div class="f-container" >
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

@@ -4,18 +4,24 @@
     <h2> Add Show Time</h2>
 @endsection
 @section('content')
-
-<form class="form-horizontal" role="form" method="POST" action="{{ url('#') }}" enctype="multipart/form-data">
+@include('validation.message')
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/addshow/store') }}" enctype="multipart/form-data">
     {!! csrf_field() !!}
     <div class="form-group">
         <label class="col-md-2 control-label">Movies</label>
         <div class="col-md-7">
-            <select class="form-control" >
-                 @foreach ($movies as $movie)
-                    <option value="{{$movie->id}}">{{$movie->movie_name}}</option>
-                 @endforeach
+                <select class="form-control" name="movie_id">
+                <option value="{{ old('movie_id')==""?'selected':''}} ">Please select</option>
+                @foreach($movies as $movie)
+                        <option value="{{$movie->id}}" {{ $movie->id == $showtime->movie_id? 'selected': ''}} >{{$movie->movie_name}}</option>
+                @endforeach
             </select>
-        </div> 
+            {{-- @error('movie_id')
+                <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                 </span>
+             @enderror --}}
+        </div>
 
     </div>
     <div class="form-group">
@@ -23,6 +29,11 @@
 
         <div class="col-md-7">
             <input type="text" class="form-control" placeholder="Pick Time" name="starttime" id="picktime" autocomplete="off">
+            {{-- @error('starttime')
+                <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                 </span>
+             @enderror --}}
         </div> 
 
     </div>
@@ -31,6 +42,11 @@
 
         <div class="col-md-7">
             <input type="text" class="form-control" placeholder="Pick Time" name="endtime" id="picktime1" autocomplete="off">
+            {{-- @error('endtime')
+                <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                 </span>
+             @enderror --}}
         </div> 
 
     </div>
@@ -38,9 +54,28 @@
         <label class="col-md-2 control-label">Select Date *</label>
 
         <div class="col-md-7">
-            <input type="text" class="form-control" placeholder="Pick Time" name="datepicker" id="datepicker" autocomplete="off">
+            <input type="text" class="form-control" placeholder="Pick Time" name="movie_date" id="datepicker"  autocomplete="off">
+            {{-- @error('movie_date')
+                <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                 </span>
+             @enderror --}}
         </div> 
 
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Price*</label>
+
+        <div class="col-md-7">
+            <input type="number" class="form-control" placeholder="Price" name="price">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Total Seat*</label>
+
+        <div class="col-md-7">
+            <input type="number" class="form-control" placeholder="Total Seat" name="total_seat">
+        </div>
     </div>
     <div class="form-group bi-form-controls">
         <div class="col-md-9 text-left">

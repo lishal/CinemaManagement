@@ -20,11 +20,11 @@
 
                         <div class="col-md-7">
                             <input type="text" class="form-control" placeholder="Movie Name" name="name" value="{{ old('name')? old('name'): ($movies->movie_name? $movies->movie_name: '') }}">
-                            @error('name')
+                            {{-- @error('name')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
                         </div>
                     </div>
                     <div class="form-group type_name">
@@ -32,11 +32,11 @@
 
                         <div class="col-md-7">
                             <input type="text" class="form-control" placeholder="Duration" name="duration"value="{{ old('duration')? old('duration'): ($movies->duration_min? $movies->duration_min: '') }}">
-                            @error('duration')
+                            {{-- @error('duration')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
                         </div>
                     </div>
                     <div class="form-group type_name">
@@ -44,11 +44,11 @@
 
                         <div class="col-md-7">
                             <input type="text" class="form-control" placeholder="Director" name="director" value="{{ old('director')? old('director'): ($movies->director? $movies->director: '') }}">
-                            @error('director')
+                            {{-- @error('director')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
                         </div>
                     </div>
 
@@ -57,11 +57,11 @@
 
                         <div class="col-md-7">
                             <textarea class="form-control" placeholder="Description" id="cast" name="cast" >{{ old('cast')? old('cast'): ($movies->cast? $movies->cast: '') }}</textarea>
-                            @error('description')
+                            {{-- @error('description')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
                         </div>
                     </div>
                     <div class="form-group type_name">
@@ -69,11 +69,11 @@
 
                         <div class="col-md-7">
                             <input type="text" class="form-control" placeholder="Language" name="language" value="{{ old('language')? old('language'): ($movies->language? $movies->language: '') }}">
-                            @error('language')
+                            {{-- @error('language')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
                         </div>
                     </div>
                     <div class="form-group">
@@ -82,11 +82,11 @@
                         <div class="col-md-7">
                             <input type="radio" name="checkage" value="1" {{ old("checkage") == "1"? "checked": ($movies->checkage == "1"? "checked": "") }}> Yes
                             <input type="radio" name="checkage" value="0" {{ old("checkage") == "0"? "checked": ($movies->checkage == "0"? "checked": "") }}> No
-                            @error('checkage')
+                            {{-- @error('checkage')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
 
                         </div>
                     </div>
@@ -97,11 +97,11 @@
 
                         <div class="col-md-7">
                             <input type="text" class="form-control" placeholder="Release Date" name="releasedate" id="releasedate" value="{{ old('releasedate')? old('releasedate'): ($movies->release_date? $movies->release_date: '') }}" autocomplete="off">
-                            @error('releasedate')
+                            {{-- @error('releasedate')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
                         </div>
                     </div>
 
@@ -110,11 +110,11 @@
 
                         <div class="col-md-7">
                             <textarea class="form-control" placeholder="Description" id="description" name="description">{{ old('description')? old('description'): ($movies->description? $movies->description: '') }}</textarea>
-                            @error('description')
+                            {{-- @error('description')
                                     <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror --}}
                         </div>
                     </div>
                     {{-- @if($movies->id==0) --}}
@@ -123,11 +123,11 @@
 
                             <div class="col-md-7">
                             <input type="file" class="form-control" placeholder="Title Image" name="titleimg" value="{{ old('titleimg')? old('titleimg'): ($movies->title_image? $movies->title_image: '') }}">
-                                @error('titleimg')
+                                {{-- @error('titleimg')
                                 <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror
+                            @enderror --}}
                             </div>
                         </div>
                     {{-- @endif --}}
@@ -137,11 +137,11 @@
 
                         <div class="col-md-7">
                             <input type="text" class="form-control" placeholder="Trailer Path" name="trailerpath" value="{{ old('trailerpath')? old('trailerpath'): ($movies->trailer_link? $movies->trailer_link: '') }}">
-                            @error('trailerpath')
+                            {{-- @error('trailerpath')
                             <span style="color: #BE3636 ;" class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                        @enderror
+                        @enderror --}}
                         </div>
                     </div>
                 

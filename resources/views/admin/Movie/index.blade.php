@@ -6,11 +6,12 @@
 @section('content')
 <div class="add-button">
     <a href="{{ url('admin/movie/add') }}" class="btn btn-primary">Add Movies</a>
-</div>  @include('validation.message')
+</div>  
+@include('validation.message')
 
     <div class="row">
         <div class="panel-body">
-            <table class="table table-striped deals-table">
+            <table class="table table-striped">
               <thead>
                 <tr>
                     <th>Movie</th>

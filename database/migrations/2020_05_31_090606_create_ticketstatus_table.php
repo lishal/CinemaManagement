@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShowtimeTable extends Migration
+class CreateTicketstatusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateShowtimeTable extends Migration
      */
     public function up()
     {
-        Schema::create('showtimes', function (Blueprint $table) {
+        Schema::create('ticketstatus', function (Blueprint $table) {
             $table->id();
-            $table->integer('movie_id');
+            $table->integer('user_id');
+            $table->string('movie_name');
             $table->time('show_time_start');
             $table->time('show_time_end');
             $table->date('show_date');
-            $table->integer('price');
-            $table->integer('totalseat')->default('50');
+            $table->integer('total_seat');
+            $table->integer('total_amount');
+            $table->enum('booking',['0', '1'])->default('0');
+            $table->enum('paid',['0', '1'])->default('0');
             $table->timestamps();
         });
     }
@@ -32,6 +35,6 @@ class CreateShowtimeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('showtime');
+        Schema::dropIfExists('ticketstatus');
     }
 }

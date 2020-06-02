@@ -5,13 +5,15 @@
           <li id="hov" class="@if(Request::is('/')) {{ 'act' }} @endif"><a href="{{url('/')}}" style="color:white; font-size:1.5vw; display:block;">Home</a></li>
           <li id="hov" class="@if(Request::is('aboutproject')) {{ 'act' }} @endif"><a href="{{url('/aboutproject')}}" style="color:white; font-size:1.5vw; display:block">About Project</a></li>
           <li id="hov" class="@if(Request::is('allmovies')) {{ 'act' }} @endif"><a href="/allmovies" style="color:white; font-size:1.5vw; display:block">All Movies</a></li>
+          <li id="hov" class="@if(Request::is('myticket')) {{ 'act' }} @endif"><a href="/myticket" style="color:white; font-size:1.5vw; display:block">My Tickets</a></li>
           <li id="hov" class="@if(Request::is('contactus')) {{ 'act' }} @endif"><a href="{{url('/contactus')}}" style="color:white; font-size:1.5vw; display:block">Contact Us</a></li>
           @if(Auth::check())  
           <li id="hov">
           <div class="dropdown" style="color:white; font-size:1.5vw;">
-            <button class="btn btn-primary dropdown-toggle" style="height:50px;" type="button" data-toggle="dropdown">{{ Auth::user()->name }} 
+            <button class="btn btn-primary dropdown-toggle" style="height:50px;" type="button" data-toggle="dropdown">{{ Auth::user()->first_name }} 
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
+                <a class="dropdown-item" style=" font-size:1vw; margin-left:10px;" href="{{url('/userprofile')}}">Profile</a><br>
                 <a class="dropdown-item" style=" font-size:1vw; margin-left:10px;" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
